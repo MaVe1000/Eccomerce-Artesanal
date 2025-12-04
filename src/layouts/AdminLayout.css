@@ -1,0 +1,26 @@
+/* AdminLayout.css */
+
+.admin-layout {
+    min-height: 100vh;
+    padding-top: 60px; 
+    background-color: #fcf8f3; 
+    color: #3d3d3d;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-layout h2 {
+    color: #6b3e26;
+    margin-bottom: 30px;
+}
+
+
+.admin-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.admin-sidebar {
+    /* ... estilos para el sidebar ... */
+}

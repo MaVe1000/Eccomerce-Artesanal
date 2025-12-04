@@ -1,0 +1,74 @@
+
+.alta-productos-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff8f0; 
+    border: 1px solid #d4b08a;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(120, 72, 0, 0.1);
+}
+
+.alta-productos-container h2 {
+    color: #a0522d; 
+    border-bottom: 2px solid #e8c9a1;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.product-form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #6b3e26;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0c9a6;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.file-info {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #a0522d;
+}
+
+.product-form button {
+    padding: 12px;
+    background-color: #a0522d;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.product-form button:hover:not(:disabled) {
+    background-color: #8b4513;
+}
+
+.product-form button:disabled {
+    background-color: #d4b08a;
+    cursor: not-allowed;
+}

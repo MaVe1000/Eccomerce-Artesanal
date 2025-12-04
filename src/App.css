@@ -30,6 +30,14 @@ main {
 }
 
 
-
+/*--------------NOTFOUND 404-----------------*/
+.error-404-message {
+    padding-top: 100px; 
+    text-align: center;
+    font-size: 2em;
+    color: #a0522d;
+    min-height: 70vh; /* Asegura que el footer quede abajo */
+    font-family: 'Segoe UI', sans-serif;
+}
 
 
