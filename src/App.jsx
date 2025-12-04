@@ -5,20 +5,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext/CartProvider";
 import { AuthProvider } from "./context/AuthContext/AuthProvider"; 
 // Componentes de Layouts y Rutas
-import { MainLayout } from "./layouts/MainLayout"; // Layout para rutas públicas
-import { AdminLayout } from "./layouts/AdminLayout"; // Layout para rutas de admin
+import { MainLayout } from "./layouts/MainLayout"; 
+import { AdminLayout } from "./layouts/AdminLayout"; 
 import { RutaProtegida } from "./components/RutaProtegida/RutaProtegida"; 
 import { Login } from "./components/Login/Login";
-// Componentes de Vistas
+
+// Componentes Públicos
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartView } from "./components/CartView/CartView";
 
 
-
-// Componentes de ejemplo para las Rutas de Admin
-const AdminPanel = () => <h2 style={{ padding: '80px', color: '#a0522d', textAlign: 'center' }}>Panel de Administración - Inicio</h2>;
-const AltaProductos = () => <h2 style={{ padding: '80px', color: '#a0522d', textAlign: 'center' }}>Formulario de Alta de Productos</h2>;
+import { Dashboard } from "./components/Admin/Dashboard"; 
+import { AltaProductos } from "./components/Admin/AltaProductos"; 
 
 
 function App() {
@@ -28,8 +27,6 @@ function App() {
         <CartProvider>
           <Routes>
             
-            {/* 1. GRUPO DE RUTAS PÚBLICAS (Con MainLayout) */}
-            {/* Las rutas anidadas heredarán el MainLayout y se renderizarán en su <Outlet /> */}
             <Route element={<MainLayout />}>
                 <Route index element={<ItemListContainer />} /> 
                 <Route path="category/:categoryName" element={<ItemListContainer />} />
@@ -37,10 +34,9 @@ function App() {
                 <Route path="cart" element={<CartView />} />
             </Route>
             
-            {/* 2. RUTA DE LOGIN (Sin Nav ni Hero, solo con el componente Login) */}
             <Route path="/login" element={<Login />} /> 
 
-            {/* 3. GRUPO DE RUTAS DE ADMINISTRACIÓN (Protegidas y con AdminLayout) */}
+            {/* RUTAS PROTEGIDAS */}
             <Route 
                 path="/admin" 
                 element={
@@ -49,12 +45,14 @@ function App() {
                     </RutaProtegida>
                 }
             >
-                {/* Rutas anidadas dentro de /admin */}
-                <Route index element={<AdminPanel />} /> {/* Coincide con /admin */}
-                <Route path="alta-productos" element={<AltaProductos />} /> {/* Coincide con /admin/alta-productos */}
+               
+                <Route index element={<Dashboard />} /> 
+                
+             
+                <Route path="alta-productos" element={<AltaProductos />} /> 
             </Route>
             
-            {/* RUTA 404 (Debe ser la última para atrapar cualquier URL no coincidente) */}
+            {/* RUTA 404 */}
             <Route 
                 path="*" 
                 element={
