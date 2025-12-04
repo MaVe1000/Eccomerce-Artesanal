@@ -24,15 +24,15 @@ export const ItemListContainer = () => {
           );
           setProducts(filteredData);
         } else {
-          setProducts(data); // Si no hay categoría (página de inicio), mostramos todos
+          setProducts(data); 
         }
       })
       .catch((err) => {
         console.error("Error al cargar o filtrar productos:", err);
-        setProducts([]); // En caso de error, mostramos lista vacía
+        setProducts([]); 
       })
       .finally(() => {
-        setLoading(false); //finalizamos la carga
+        setLoading(false); 
       });
   }, [categoryName]);
 

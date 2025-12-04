@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
-import { validateProduct } from "../../../utils/validateProducts";
 import { uploadToImgbb } from "../../../services/UploadImage";
 import { createProduct } from "../../../services/products";
-
+import { validateProducts} from "../../../utils/validateProducts";
 import "../ProductFormContainer/ProductFormContainer.css";
 
 export const ProductFormContainer = () => {
@@ -27,7 +26,7 @@ export const ProductFormContainer = () => {
     setErrors({});
     setLoading(true);
 
-    const newErrors = validateProduct({ ...product, file });
+    const newErrors = validateProducts({ ...product, file });
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       setLoading(false);
