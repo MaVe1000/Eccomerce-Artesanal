@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
 import { validateProduct } from "../../../utils/validateProducts";
-import { uploadImage} from "../../../services/UploadImage";
+import { uploadToImgbb } from "../../../services/UploadImage";
 import { createProduct } from "../../../services/products";
 
 import "../ProductFormContainer/ProductFormContainer.css";
@@ -35,7 +35,7 @@ export const ProductFormContainer = () => {
     }
 
     try {
-      const imageUrl = await uploadImage(file);
+      const imageUrl = await uploadToImgbb(file);
       const productData = {
         ...product,
         price: Number(product.price),

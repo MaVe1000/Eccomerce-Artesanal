@@ -26,7 +26,7 @@
     width: 250px; 
     flex-shrink: 0; /* Evita que el sidebar se achique */
     background-color: #a0522d; 
-    color: white;
+    color: rgb(181, 96, 12);
     padding: 20px 0;
     position: sticky; 
     /* top: 0; */
@@ -38,13 +38,14 @@
     display: block;
     padding: 12px 20px;
     text-decoration: none;
-    color: white;
+    color: rgb(146, 67, 18);
     font-weight: 500;
     transition: background-color 0.2s;
 }
 
 .admin-sidebar nav a:hover {
     background-color: #8b4513; 
+    color: #fff8f0;
 }
 
 .admin-sidebar nav a.active {

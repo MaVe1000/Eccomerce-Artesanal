@@ -45,7 +45,6 @@ function App() {
                 path="/admin" 
                 element={
                     <RutaProtegida>
-                        {/* El AdminLayout tiene su propio Outlet */}
                         <AdminLayout />
                     </RutaProtegida>
                 }
