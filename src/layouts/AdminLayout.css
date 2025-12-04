@@ -1,67 +1,70 @@
 /* AdminLayout.css */
 
 .admin-layout {
-    min-height: 100vh;
-    padding-top: 60px; 
-    background-color: #fcf8f3; 
-    color: #3d3d3d;
-    font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background-color: #fcf8f3;
+  color: #3d3d3d;
 }
 
-.admin-layout h2 {
-    color: #6b3e26;
-    margin-bottom: 30px;
+.admin-main-content h1 {
+  color: #6b3e26;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2em;
+  border-bottom: 1px solid #e8c9a1;
+  padding-bottom: 10px;
 }
-
 
 .admin-content-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-    min-height: calc(100vh - 60px);
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 100vh;
 }
-
 
 .admin-sidebar {
-    width: 250px; 
-    flex-shrink: 0; /* Evita que el sidebar se achique */
-    background-color: #a0522d; 
-    color: rgb(181, 96, 12);
-    padding: 20px 0;
-    position: sticky; 
-    /* top: 0; */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  flex-shrink: 0;
+  background-image: url("/images/bgAdminSidebar.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: rgb(203, 118, 13);
+  padding: 20px 0;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+.admin-sidebar h3 {
+  margin-left: 18px;
 }
 
-
 .admin-sidebar nav a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: rgb(146, 67, 18);
-    font-weight: 500;
-    transition: background-color 0.2s;
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: rgb(146, 67, 18);
+  font-weight: 500;
+  transition: background-color 0.2s;
 }
 
 .admin-sidebar nav a:hover {
-    background-color: #8b4513; 
-    color: #fff8f0;
+  background-color: #8b4513;
+  color: #fff8f0;
 }
 
 .admin-sidebar nav a.active {
-    background-color: #8b4513;
-    font-weight: bold;
-    border-left: 5px solid #fff8f0; 
+  background-color: #8b4513;
+  font-weight: bold;
+  border-left: 5px solid #fff8f0;
 }
 
 .admin-main-content {
-    flex-grow: 1;
-    padding: 40px; 
-    background-color: #fcf8f3;
-}
-
-.admin-main-content h2 {
-    color: #a0522d; 
-    margin-bottom: 30px;
-    text-align: left;
+  flex-grow: 1;
+  padding: 20px 40px;
+  background-color: #fcf8f3;
 }
