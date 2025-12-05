@@ -11,52 +11,61 @@ export const ProductFormUI = ({
       <form className="product-form" onSubmit={onSubmit}>
         <h2>Agregar producto</h2>
         <div>
-          <label>Nombre:</label>
+          <label htmlFor="name">Nombre:</label>
           <input
             type="text"
+            id="name"
             name="name"
             value={product.name}
             onChange={onChange}
             required
+            autoComplete="on"
           />
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
         <div>
-          <label>Precio:</label>
+          <label htmlFor="price">Precio:</label>
           <input
             type="number"
+            id="price"
             name="price"
             value={product.price}
             onChange={onChange}
             required
+            autoComplete="off"
           />
           {errors.price && <p className="error">{errors.price}</p>}
         </div>
         <div>
-          <label>Categoria</label>
+          <label htmlFor="category">Categoria</label>
           <input
             type="text"
+            id="category"
             name="category"
             value={product.category}
             onChange={onChange}
             required
+            autoComplete="off"
           />
           {errors.category && <p className="error">{errors.category}</p>}
         </div>
         <div>
-          <label>Descripcion:</label>
+          <label htmlFor="description">Descripcion:</label>
           <textarea
             name="description"
+            id="description"
             value={product.description}
             onChange={onChange}
             required
+            autoComplete="off"
           ></textarea>
           {errors.description && <p className="error">{errors.description}</p>}
         </div>
         <div>
-          <label>Imagen:</label>
+          <label htmlFor="file">Imagen:</label>
           <input
             type="file"
+            id="file"
             accept="image/*"
             onChange={(e) => onFileChange(e.target.files?.[0] ?? null)}
           />
