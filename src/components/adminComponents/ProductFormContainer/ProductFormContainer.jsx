@@ -14,6 +14,7 @@ export const ProductFormContainer = () => {
     price: "",
     category: "",
     description: "",
+    stock: "",
   });
 
   const handleChange = (e) => {

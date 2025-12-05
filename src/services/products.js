@@ -38,3 +38,30 @@ export const getProductById = async (id) => {
 
   return await res.json();
 };
+
+//  FUNCIONES para el CRUD de productos
+export const updateProduct = async (id, product) => {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+
+  if (!res.ok) {
+    throw new Error("No se pudo actualizar el producto");
+  }
+  return await res.json();
+};
+
+export const deleteProduct = async (id) => {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    throw new Error("No se pudo eliminar el producto");
+  }
+  return await res.json();
+};
