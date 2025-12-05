@@ -1,8 +1,8 @@
-const BAS_URL = "https://6931a26d11a8738467cfdcce.mockapi.io/products";
+const BASE_URL = "https://6931a26d11a8738467cfdcce.mockapi.io/products";
 
 
 export const createProduct = async (product) => {
-  const res = await fetch(BAS_URL, {
+  const res = await fetch(BASE_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const createProduct = async (product) => {
 };
 
 export const getProducts = async (category) => {
-  let url = BAS_URL;
+  let url = BASE_URL;
   if (category) {
     url += `?category=${category}`;
   }
@@ -31,7 +31,7 @@ export const getProducts = async (category) => {
 };
 // Obtener un producto por su ID
 export const getProductById = async (id) => {
-  const res = await fetch(`${BAS_URL}/${id}`);
+  const res = await fetch(`${BASE_URL}/${id}`);
   if (!res.ok) {
     throw new Error("Error al obtener el producto");
   }

@@ -10,7 +10,7 @@ export const ItemListContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch("/data/products.json")
+    fetch("https://6931a26d11a8738467cfdcce.mockapi.io/products")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Hubo un problema al cargar los productos");
